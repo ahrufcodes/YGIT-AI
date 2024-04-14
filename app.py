@@ -3,7 +3,7 @@ import openai
 import streamlit as st
 
 # UI Configuration
-st.set_page_config(page_title="YGIT", page_icon="img/Mark.svg")
+st.set_page_config(page_title="YGIT", page_icon="💙")
 
 # Google Font URL and CSS Injection for Styling
 font_url = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
