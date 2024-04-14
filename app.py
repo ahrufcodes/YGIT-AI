@@ -44,7 +44,9 @@ if st.button('Generate Roadmap'):
             f"Include an introduction to the field, what they need to know at this level, links to courses, book recommendations, "
             f"YouTube videos/playlists, and article recommendations. Provide hands-on project ideas and GitHub repositories where applicable."
             f"Also, include a list of communities, forums, and social media accounts to follow for networking and learning."
-            f"Include  "
+            f"Include a list of job boards, websites, and platforms to find job opportunities and internships."
+            f"Lastly, provide a list of tools, software, and technologies to learn and master for this career."
+            f""
         )
 
         # Fetching the completion from OpenAI
@@ -70,3 +72,33 @@ if st.button('Generate Roadmap'):
             st.error("Sorry, an error occurred while generating your roadmap.")
     else:
         st.warning('Please enter a tech career to generate your roadmap.')
+
+#Footer and all
+footer="""<style>
+a:link , a:visited{
+color: #ffffff;
+background-color: transparent;
+text-decoration: underline;
+}
+
+a:hover,  a:active {
+color: #102755;
+background-color: transparent;
+text-decoration: underline;
+}
+
+.footer {
+position:fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: #a1b4d4;
+color: #fffff;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p> Developed with ❤️ by <a href="https://github.com/ahrufcodes" target="_blank">ahruf</a> </p>
+</div>
+"""
+st.markdown(footer,unsafe_allow_html=True)
