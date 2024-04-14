@@ -92,7 +92,7 @@ position:fixed;
 left: 0;
 bottom: 0;
 width: 100%;
-background-color: #a1b4d4;
+background-color: #919FB6;
 color: #fffff;
 text-align: center;
 }
