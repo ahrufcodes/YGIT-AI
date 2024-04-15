@@ -22,12 +22,11 @@ st.markdown(css_code, unsafe_allow_html=True)
 
 # Connect to OpenAI GPT-3
 openai.api_key = os.getenv("OPENAI_API_KEY")
-
 # Display an Image Banner
 st.image('img/banner.png', use_column_width=True)
-
 # App Main Content
 st.header('Your Guide into Tech: Career Roadmap')
+
 
 # User Inputs
 career = st.text_input('Which tech career would you like to pursue or learn more about?')
@@ -36,47 +35,55 @@ experience_level = st.selectbox(
     ('Beginner', 'Intermediate', 'Advanced', 'Expert')
 )
 
-if st.button('Generate Roadmap'):
-    if career:
-        # Detailed prompt for the OpenAI model
-        prompt_message = (
-            f"Create a detailed and structured learning roadmap for someone aspiring to enter the {career} field at a {experience_level.lower()} level. "
-            f"Include an introduction to the field, what they need to know at this level, links to courses, book recommendations, "
-            f"YouTube videos/playlists, and article recommendations. Provide hands-on project ideas and GitHub repositories where applicable."
-            f"Also, include a list of communities, forums, and social media accounts to follow for networking and learning."
-            f"Include a list of job boards, websites, and platforms to find job opportunities and internships."
-            f"Lastly, provide a list of tools, software, and technologies to learn and master for this career."
-            f""
-        )
-
-        # Fetching the completion from OpenAI
+def get_career_roadmap(career, experience_level):
+    prompt_message = (
+        f"Create a detailed and structured learning roadmap for{career} field at a {experience_level.lower()} level. "
+        f"Include an a detailed introduction to the field, all what to know about it, what they need to know at this level, links to courses, book recommendations,"
+        f"Include YouTube videos/playlists, and article recommendations. Provide hands-on project ideas and GitHub repositories where applicable. "
+        f"Also, include a list of communities, forums, and social media accounts to follow for networking and learning. "
+        f"Include a list of job boards, websites, and platforms to find job opportunities and internships. "
+        f"Lastly, provide a list of tools, software, and technologies to learn and master for this career."
+    )
+    try:
         response = openai.ChatCompletion.create(
-            model="gpt-4-turbo-preview",
+            model="gpt-4",
             messages=[
-                {"role": "system", "content": "You are an assistant that helps create detailed career roadmaps."},
-                {"role": "user", "content": f"I'm interested in learning more about a career in {career} at a {experience_level} level. Can you generate a comprehensive resource list and a digital roadmap?"}
+                {"role": "system", "content": "You are an assistant skilled in providing comprehensive career guidance. You offer detailed insights into various tech careers, including educational resources, practical tips, and professional development strategies"},
+                {"role": "user", "content": prompt_message}
             ],
-            temperature=1,
+            temperature=0.5,
             max_tokens=1024,
             top_p=1,
             frequency_penalty=0,
             presence_penalty=0
         )
 
-        # Handling the response
         if response.choices:
-            last_message = response.choices[0].message['content']
-            formatted_output = "### Your Personalized Tech Career Roadmap\n" + last_message.replace("\n", "\n\n")
-            st.markdown(formatted_output, unsafe_allow_html=True)
+            return response.choices[0].message['content']
         else:
-            st.error("Sorry, an error occurred while generating your roadmap.")
+            return "No response was generated."
+    except Exception as e:
+            return f"Error processing your request: {str(e)}"
+
+
+
+
+# Button to generate the roadmap + loading state
+if st.button('Generate Roadmap'):
+    if career:
+        with st.spinner('cooking your roadmap, wait a minute.'):
+            roadmap = get_career_roadmap(career, experience_level)
+            st.success('Yay here is your roadmap')
+        st.markdown("### Here is  Your Personalized Tech Career Roadmap")
+        st.markdown(roadmap, unsafe_allow_html=True)
     else:
         st.warning('Please enter a tech career to generate your roadmap.')
+
 
 #Footer and all
 footer="""<style>
 a:link , a:visited{
-color: #ffffff;
+color: #B7B7B7;
 background-color: transparent;
 text-decoration: underline;
 }
