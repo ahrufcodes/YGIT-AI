@@ -22,6 +22,7 @@ st.markdown(css_code, unsafe_allow_html=True)
 
 # Connect to OpenAI GPT-3
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
 # Display an Image Banner
 st.image('img/banner.png', use_column_width=True)
 # App Main Content
@@ -46,13 +47,13 @@ def get_career_roadmap(career, experience_level):
     )
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-4",
+            model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are an assistant skilled in providing comprehensive career guidance. You offer detailed insights into various tech careers, including educational resources, practical tips, and professional development strategies"},
                 {"role": "user", "content": prompt_message}
             ],
             temperature=0.5,
-            max_tokens=1024,
+            max_tokens=2024,
             top_p=1,
             frequency_penalty=0,
             presence_penalty=0
