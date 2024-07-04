@@ -19,60 +19,6 @@ client = OpenAI(
 st.set_page_config(page_title="YGIT", page_icon="💙")
 
 
-
-# Custom CSS for styling
-st.markdown("""
-<style>
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 0;
-        border-bottom: 1px solid #e0e0e0;
-    }
-    .brand {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #3B6AC8;
-    }
-    .nav-links {
-        display: flex;
-        gap: 1rem;
-    }
-    .nav-link {
-        color: #333;
-        text-decoration: none;
-        font-weight: 500;
-    }
-    .nav-link:hover {
-        color: #3B6AC8;
-    }
-    .sidebar-link {
-        display: block;
-        padding: 0.5rem 0;
-        color: #333;
-        text-decoration: none;
-    }
-    .sidebar-link:hover {
-        color: #3B6AC8;
-    }
-</style>
-""", unsafe_allow_html=True)
-
-# Header
-st.markdown("""
-<div class="header">
-    <div class="brand">YGIT</div>
-    <div class="nav-links">
-        <a href="#" class="nav-link">Home</a>
-        <a href="#" class="nav-link">About</a>
-        <a href="#" class="nav-link">Roadmap</a>
-        <a href="#" class="nav-link">Contact</a>
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
-
 # Google Font URL and CSS Injection for Styling
 font_url = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
 css_code = f"""
