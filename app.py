@@ -108,32 +108,93 @@ if st.button('Generate Roadmap'):
 
 
 
-#Footer and all
-footer="""<style>
-a:link , a:visited{
-color: #B7B7B7;
-background-color: transparent;
-text-decoration: underline;
-}
-
-a:hover,  a:active {
-color: #102755;
-background-color: transparent;
-text-decoration: underline;
-}
-
-.footer {
-position:fixed;
-left: 0;
-bottom: 0;
-width: 100%;
-background-color: #919FB6;
-color: #fffff;
-text-align: center;
-}
+footer = """
+<style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #f8f9fa;
+        color: #6c757d;
+        text-align: center;
+        padding: 10px 0;
+        font-family: 'Roboto', sans-serif;
+        font-size: 10px;
+        border-top: 1px solid #dee2e6;
+        z-index: 100;
+        transition: background-color 0.3s ease;
+    }
+    .footer:hover {
+        background-color: #e9ecef;
+    }
+    .footer p {
+        margin: 0;
+        padding: 0;
+    }
+    .footer a {
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
+        display: inline-block;
+    }
+    .footer a:hover {
+        color: #0056b3;
+        transform: translateY(-2px);
+    }
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .footer-left, .footer-right {
+        display: flex;
+        align-items: center;
+    }
+    .footer-right a {
+        margin-left: 20px;
+    }
+    .github-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+        vertical-align: middle;
+        transition: transform 0.3s ease;
+    }
+    .footer-right a:hover .github-icon {
+        transform: rotate(360deg);
+    }
 </style>
+
 <div class="footer">
-<p> Developed with ❤️ by <a href="https://github.com/ahrufcodes" target="_blank">ahruf</a> </p>
+    <div class="footer-content">
+        <div class="footer-left">
+            <p>© 2024 Your Guide into Tech</p>
+        </div>
+        <div class="footer-right">
+            <p>Developed with <span class="heart">❤️</span> by 
+                <a href="https://github.com/ahrufcodes" target="_blank">
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" class="github-icon" alt="GitHub">
+                    ahruf
+                </a>
+            </p>
+        </div>
+    </div>
 </div>
+
+<script>
+    const heart = document.querySelector('.heart');
+    heart.addEventListener('mouseover', () => {
+        heart.style.fontSize = '16px';
+        heart.style.transition = 'font-size 0.3s ease';
+    });
+    heart.addEventListener('mouseout', () => {
+        heart.style.fontSize = '10px';
+    });
+</script>
 """
-st.markdown(footer,unsafe_allow_html=True)
+
+st.markdown(footer, unsafe_allow_html=True)
