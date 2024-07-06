@@ -58,7 +58,7 @@ def generate_pdf_roadmap(career, experience_level, roadmap_content):
 
     # Add footer to all pages
     for page in doc:
-        page.insert_text((50, 800), "Your Guide into Tech", fontsize=8, fontname="helv", fontfile=None, set_simple=True)
+        page.insert_text((50, 800), "www.ygit.info", fontsize=8, fontname="helv", fontfile=None, set_simple=True)
         page.insert_text((500, 800), f"Page {page.number + 1}", fontsize=8, fontname="helv", fontfile=None, set_simple=True)
 
     # Save PDF
