@@ -58,12 +58,12 @@ We're excited to welcome new contributors to YGIT! Your ideas and efforts can ma
 
 To get started:
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create your feature branch 
+3. Commit your changes
+4. Push to the branch 
 5. Open a Pull Request
 
-Check out our [contribute.md](CONTRIBUTING.md) for more detailed guidelines.
+Check out our [contribute.md](contribute.md) for more detailed guidelines.
 
 ## 🌟 Join Our Community
 
