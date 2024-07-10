@@ -6,6 +6,10 @@
 
 Your Guide into Tech (YGIT) is an innovative application made to provide personalized career roadmaps for individuals looking to break into or advance in the tech industry. Our platform leverages AI to create tailored learning paths, resource recommendations, and career guidance for a wide range of tech roles.
 
+## Read Blogpost ⬇️
+- **YGIT**: [My Motivation and what not](https://ahruf.substack.com/p/ygit-a-streamlit-app-for-personalized)
+
+
 ## ✨ Features
 
 - **Personalized Career Roadmaps**: Get a custom-tailored roadmap based on your chosen tech career and experience level.
