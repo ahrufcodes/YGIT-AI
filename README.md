@@ -63,7 +63,7 @@ To get started:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-Check out our [CONTRIBUTING.md](CONTRIBUTING.md) for more detailed guidelines.
+Check out our [contribute.md](CONTRIBUTING.md) for more detailed guidelines.
 
 ## 🌟 Join Our Community
 
