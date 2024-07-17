@@ -1,6 +1,6 @@
 # YGIT: Your Guide into Tech
 
-![YGIT Banner](img/banner.png)
+![YGIT Banner](./img/banner.png)
 
 ## 🚀 About YGIT
 
